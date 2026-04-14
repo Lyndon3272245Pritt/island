@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 34
+    buildToolsVersion '34.0.0'
+
+    defaultConfig {
+        applicationId "com.oasisfeng.island"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility Java
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    flavorDimensions 'tier'
+    productFlavors Free / open-source variant
+        community {
+            dimension'
+            applicationIdSuffix '.community'
+        }
+        // Full-featured variant (Google Play)
+        complete {
+            dimension 'tier'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    // AndroidX core
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.6.2'
+
+    // Material Design
+    implementation 'com.google.android.material:material:1.11.0'
+
+    // Firebase (complete flavor only)
+    completeImplementation platform('com.google.firebase:firebase-bom:32.7.0')
+    completeImplementation 'com.google.firebase:firebase-analytics'
+    completeImplementation 'com.google.firebase:firebase-crashlytics'
+
+    // Deferred deep link / shortcut helpers
+    implementation 'androidx.browser:browser:1.7.0'
+
+    // Unit testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:5.8.0'
+
+    // Instrumented testing
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

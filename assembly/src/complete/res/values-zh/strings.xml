@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">炼妖壶</string>
+    <!-- 个人汉化：将 "Island" 翻译为更贴近中文习惯的名称 -->
+    <string name="app_name">岛屿</string>
 </resources>

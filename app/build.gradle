@@ -21,9 +21,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-             Personal: use a distinct so debug/release canexist on the same device
-            applicationIdSersionNameSuffix '- JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+             Personal: use a distinct suffix debug/release can coexist onfix '.debug'
+            ersionNameSuffix '-debug'
+        }
+    ileOptions {
+        sourceCompatVERSION_11
     }
 
     flavorDimensions 'tier'

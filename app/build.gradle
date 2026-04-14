@@ -21,20 +21,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled false
-            debuggable true
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility Java
+             Personal: use a distinct so debug/release canexist on the same device
+            applicationIdSersionNameSuffix '- JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
 
     flavorDimensions 'tier'
-    productFlavors Free / open-source variant
+    productFlavors {
+        // Free / open-source variant
         community {
-            dimension'
+            dimension 'tier'
             applicationIdSuffix '.community'
         }
         // Full-featured variant (Google Play)

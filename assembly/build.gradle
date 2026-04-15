@@ -21,6 +21,8 @@ android {
             // Keep debug builds debuggable and disable minification for faster iteration
             minifyEnabled false
             debuggable true
+            // Personal: use a distinct app ID suffix so debug and release can coexist on the same device
+            applicationIdSuffix ".debug"
         }
         release {
             minifyEnabled true

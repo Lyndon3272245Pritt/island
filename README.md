@@ -18,6 +18,8 @@ to support separate "light" build for core modules, in the form of "product flav
 The **"engine"** module shares the same package name with the **"complete"** build, to inherit the profile/device owner privilege.
 The **"mobile"** and other modules can be installed and updated separately alongside **"engine"** module for development convenience.
 
+> **Personal note:** I'm using this fork primarily to study how Island handles profile owner delegation and the open API layer. The `deagle` clone step is easy to miss — make sure both repos sit at the same directory level before opening in Android Studio.
+
 ## Open API
 
 Due to the exclusivity nature, user could only use one Android DPC app at a time, and price of switching DPC is far too heavy. To encourage active exploration and broader development in the capabilities of DPC and therefore better benefit users,

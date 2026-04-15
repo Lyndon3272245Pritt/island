@@ -26,14 +26,12 @@
 
 # Remove verbose and debug logging
 -assumenosideeffects class android.util.Log {
-	public static boolean isLoggable(java.lang.String, int);
-	public static int v(...);
+	public static boolean isLo, int);
+	public static int v(...)tpublic static int d(...);
 }
 
 # For generics reflection to work
 -keepattributes Signature
--keepattributes *Annotation*
-
-# More debugging info (line number)
+-keepattributes * More debugging info (line number)
 -renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable

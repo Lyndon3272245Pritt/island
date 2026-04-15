@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:sharedUserId="com.oasisfeng.island" >
 
+    <!-- Personal fork: disabled allowBackup to prevent sensitive island profile data from being backed up -->
     <application android:label="@string/app_name" tools:replace="label" android:icon="@mipmap/ic_launcher"
-                 android:allowBackup="true" android:fullBackupContent="@xml/backup" tools:ignore="GoogleAppIndexingWarning" />
+                 android:allowBackup="false" android:fullBackupContent="@xml/backup" tools:ignore="GoogleAppIndexingWarning" />
 
 </manifest>

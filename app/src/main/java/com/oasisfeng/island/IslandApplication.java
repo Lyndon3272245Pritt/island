@@ -62,6 +62,8 @@ public class IslandApplication extends Application {
             Log.i(TAG, "Island core initialized successfully.");
         } catch (Exception e) {
             Log.e(TAG, "Failed to initialize Island core", e);
+            // Note: We intentionally don't rethrow here — a core init failure should not
+            // crash the entire app process; degraded functionality is preferable to a hard crash.
         }
     }
 
@@ -80,7 +82,8 @@ public class IslandApplication extends Application {
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        if (level >= TRIM_MEMORY_MODERATE) {
+        // Only log at TRIM_MEMORY_RUNNING_CRITICAL or higher to reduce log noise
+        if (level >= TRIM_MEMORY_RUNNING_CRITICAL) {
             Log.w(TAG, "Trimming memory at level: " + level);
         }
     }

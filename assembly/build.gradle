@@ -18,10 +18,13 @@ android {
     buildTypes {
         debug {
             firebaseCrashlytics.mappingFileUploadEnabled false
+            // Keep debug builds debuggable and disable minification for faster iteration
+            minifyEnabled false
+            debuggable true
         }
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 

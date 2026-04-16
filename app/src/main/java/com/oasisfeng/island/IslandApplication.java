@@ -82,8 +82,9 @@ public class IslandApplication extends Application {
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        // Only log at TRIM_MEMORY_RUNNING_CRITICAL or higher to reduce log noise
-        if (level >= TRIM_MEMORY_RUNNING_CRITICAL) {
+        // Lowered threshold from TRIM_MEMORY_RUNNING_CRITICAL to TRIM_MEMORY_RUNNING_LOW
+        // so we get earlier warnings and can react before things get critical.
+        if (level >= TRIM_MEMORY_RUNNING_LOW) {
             Log.w(TAG, "Trimming memory at level: " + level);
         }
     }

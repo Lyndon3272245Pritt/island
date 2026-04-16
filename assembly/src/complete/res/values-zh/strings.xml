@@ -2,4 +2,6 @@
 <resources>
     <!-- 个人汉化：将 "Island" 翻译为更贴近中文习惯的名称 -->
     <string name="app_name">岛屿</string>
+    <!-- 应用描述 -->
+    <string name="app_description">工作与个人空间隔离工具</string>
 </resources>

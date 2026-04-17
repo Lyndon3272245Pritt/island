@@ -21,22 +21,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            // Personal: use a distinct suffix so debug/release can coexist on device
-            applicationIdSuffix '.debug'
-            versionNameSuffix '-debug'
-        }
+             Personal: use a distinct suffix so debug '.debug'
+            versionName        sourceCompatibility JavaVersion.VERSION11
     }
 
-    compileOptions {
-        sourceCompatn        targetCompatibility JavaVersion.VERSION_11
-    }
-
-    flavorDimensions ors {
-        // Free / open-source variant
-        community'
+    flavorDimensions 'tier'
+    productFlavors {
+        community {
+            // Free / open-source variant
+            dimension 'tier'
             applicationIdSuffix '.community'
         }
-        // Full-featured variant (Google            dimension 'tier'
+        complete {
+            // Full-featured variant (Google services)
+            dimension 'tier'
         }
     }
 
@@ -47,7 +45,7 @@ android {
 
     packagingOptions {
         exclude 'META-INF/LICENSE'
-        excludeNOTICE'
+        exclude 'META-INF/NOTICE'
     }
 }
 
